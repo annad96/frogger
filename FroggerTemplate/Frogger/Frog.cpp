@@ -1,14 +1,15 @@
 #include "Frog.h"
 #include "Terminal.h"
 
-Frog::Frog()
+Frog::Frog(Terminal& term) :
+    _dir(MoveDirection::UP)
 {
-
+    _position = { {6,5} }
 }
 
 void Frog::draw(Terminal & term) {
-	for (int i = 0; i < Frog.size(); i++) {
-		term.set_cell();
+
+		term.set_cell(_position[0].x, _position[0].y, "o");
 	}
 }
 /*
