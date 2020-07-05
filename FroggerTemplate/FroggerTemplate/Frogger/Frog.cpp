@@ -1,21 +1,19 @@
 #include "Frog.h"
 #include "Terminal.h"
 
-Frog::Frog() :
+Frog::Frog(Terminal& term) :
     _dir(MoveDirection::UP)
 {
-    _position = { {term.width()/2,term.height()} }
+    _position = { {6,5} }
 }
 
-void Frog::draw() {
+void Frog::draw(Terminal & term) {
 
-		term.set_cell(_position[0].x, _position[0].y - 2, "o");
-        term.set_cell(_position[0].x, _position[0].y - 1, "-0-");
-        term.set_cell(_position[0].x, _position[0].y, "^ ^");
+		term.set_cell(_position[0].x, _position[0].y, "o");
 	}
 }
 /*
-void Frog::move_frog(char get_key)
+void Frog::move_frog(char key)
 {
     switch (key) {
     case 'w':

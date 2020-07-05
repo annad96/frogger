@@ -1,15 +1,26 @@
 #include "Car.h"
 #include "Terminal.h"
 
-Car::Car()
+Car::Car() :
+	_dir(MoveDirection::RIGHT), _dir(MoveDirection::LEFT)
 {
 
 }
 
 void Car::draw(Terminal & term) {
-	for (int i = 0; i < Car.size(); i++) {
-		term.set_cell();
-	}
+	//if (_dir == RIGHT) {
+	//for (int i = 0; i < car.size(); i++)
+	//{	//car right
+		term::set_cell(paddle[0].x, paddle[0].y, '- -');
+		term::set_cell(paddle[0].x, paddle[0].y, '0H>');
+		term::set_cell(paddle[0].x, paddle[0].y, '- -');
+
+		//car left
+
+		term::set_cell(paddle[0].x, paddle[0].y, '- -');
+		term::set_cell(paddle[0].x, paddle[0].y, '<H0');
+		term::set_cell(paddle[0].x, paddle[0].y, '- -');
+	//}
 }
 /*
 void Car::move_car(std::vector<Vec2D>& car, Direction dir) {
